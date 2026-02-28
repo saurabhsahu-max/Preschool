@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oratrics Pre-school | Play, Learn, Grow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+      * {
+        font-family: "Outfit", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="mx-3 sm:mx-25 lg:mx-35 xl:mx-35 font-sans text-gray-900">
+    <!-- Navbar -->
+    <nav
+      class="bg-[#FFB100] rounded-lg my-5 flex items-center justify-between p-6"
+    >
+      <img
+        th:src="@{/images/logo.png}"
+        alt="Oratrics Logo"
+        class="h-[16vw] lg:h-[4vw]"
+      />
+      <div
+        class="hidden sm:flex lg:flex md:flex items-center gap-4 font-semibold"
+      >
+        <span>Home</span>
+        <span>About Us</span>
+        <span>Admission</span>
+        <span>Gallery</span>
+      </div>
+      <button class="bg-[#8B0000] text-white p-2 rounded-sm">
+        Register Now
+      </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      x-data="{ 
+    step: 1, 
+    total: 3,
+    autoNext() {
+      setInterval(() => {
+        this.step = this.step < this.total ? this.step + 1 : 1;
+      }, 5000) // Change slide every 5 seconds
+    } 
+  }"
+      x-init="autoNext()"
+      class="relative overflow-hidden"
+    >
+      <div
+        x-show="step==1"
+        class="h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start bg-no-repeat bg-cover lg:bg-contain gap-4 lg:gap-10 rounded-3xl"
+       th:style="'background-image: url(' + @{/images/castle.webp} + ')'"
+        x-transition:enter="transition ease-out duration-700"
+        x-transition:enter-start="opacity-0 translate-x-8"
+        x-transition:enter-end="opacity-100 translate-x-0"
+        x-transition:leave="transition ease-in duration-300 absolute inset-0"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+      >
+        <p
+          class="text-[#D31C4F] text-3xl lg:text-[5vw]/[5vw] xl:text-[5vw]/[5vw]"
+        >
+          ADMISSIONS OPEN <br />
+          FOR ACADEMIC <br />
+          SESSION <span class="text-[#000]">2026–27</span>
+        </p>
+        <button
+          class="bg-[#120E6C] text-white w-fit text-lg px-6 py-2 lg:px-10 lg:py-4 rounded-xl hover:bg-[#e0a000] transition-colors duration-300"
+        >
+          Register Now
+        </button>
+      </div>
+
+      <div
+        x-show="step==2"
+        class="h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start bg-no-repeat bg-cover lg:bg-contain gap-4 lg:gap-10 rounded-3xl"
+        th:style="'background-image: url(' + @{/images/hero2.png} + ')'"
+        x-transition:enter="transition ease-out duration-700"
+        x-transition:enter-start="opacity-0 translate-x-8"
+        x-transition:enter-end="opacity-100 translate-x-0"
+        x-transition:leave="transition ease-in duration-300 absolute inset-0"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+      >
+        <p class="text-white text-3xl lg:text-[5vw]/[5vw] xl:text-[5vw]/[5vw]">
+          Safe Spaces for Curious Explorers
+        </p>
+        <span class="text-white lg:w-[25vw]"
+          >An inspiring environment that blends advanced safety with dynamic
+          outdoor learning for young minds to explore and grow.</span
+        >
+        <button
+          class="bg-[#FFB100] w-fit text-lg px-6 py-2 lg:px-10 lg:py-4 rounded-xl hover:bg-[#e0a000] transition-colors duration-300"
+        >
+          Register Now
+        </button>
+      </div>
+
+      <div
+        x-show="step==3"
+        class="h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start bg-no-repeat bg-cover lg:bg-contain gap-4 gap-10 rounded-3xl"
+		th:style="'background-image: url(' + @{/images/hero2.png} + ')'"
+        x-transition:enter="transition ease-out duration-700"
+        x-transition:enter-start="opacity-0 translate-x-8"
+        x-transition:enter-end="opacity-100 translate-x-0"
+        x-transition:leave="transition ease-in duration-300 absolute inset-0"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+      >
+        <p class="text-white text-3xl lg:text-[5vw]/[5vw] xl:text-[5vw]/[5vw]">
+          Guided by Passionate Educators
+        </p>
+        <span class="text-white lg:w-[25vw]"
+          >Where every child’s journey is nurtured with warmth, care, and a
+          touch of magic.K.G</span
+        >
+        <button
+          class="bg-[#FFB100] w-fit text-lg px-6 py-2 lg:px-10 lg:py-4 rounded-xl hover:bg-[#e0a000] transition-colors duration-300"
+        >
+          Register Now
+        </button>
+      </div>
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+        <template x-for="i in total">
+          <button
+            @click="step = i"
+            class="h-3 rounded-full transition-all duration-300"
+            :class="step == i ? 'w-8 bg-[#FFB100]' : 'w-3 bg-white/50'"
+          ></button>
+        </template>
+      </div>
+    </section>
+
+   <!-- banner-1 -->
+<section class="my-10 px-4 lg:px-10">
+  
+  <!-- Heading -->
+  <div class="flex justify-between items-center flex-wrap gap-3">
+    <h2 class="text-[#8B0000] text-2xl sm:text-3xl lg:text-4xl font-semibold">
+      Spreading <span class="text-black">Love</span> to 20+ Countries
+    </h2>
+
+    <img src="/images/bird.png" class="h-8 sm:h-10 lg:h-14 object-contain" />
+  </div>
+
+  <!-- Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+    
+    <!-- Card -->
+    <div class="flex items-center gap-4 bg-[#F8F8F8] border border-[#E5E7EB] p-5 rounded-3xl hover:shadow-lg transition duration-300">
+      
+      <img 
+        src="/images/childavatar1.webp"
+        class="h-14 w-14 sm:h-16 sm:w-16 object-cover rounded-full"
+      />
+
+      <div class="flex flex-col">
+        <p class="text-[#8B0000] text-lg sm:text-xl font-semibold">
+          Who we are?
+        </p>
+        <p class="text-sm sm:text-base text-gray-600">
+          Most Loved Preschool
+        </p>
+        <p class="font-bold text-base sm:text-lg mt-1 cursor-pointer hover:text-[#8B0000]">
+          Know More
+        </p>
+      </div>
+    </div>
+
+    <!-- Duplicate cards -->
+    <div class="flex items-center gap-4 bg-[#F8F8F8] border border-[#E5E7EB] p-5 rounded-3xl hover:shadow-lg transition duration-300">
+      <img src="/images/childavatar1.webp" class="h-14 w-14 sm:h-16 sm:w-16 object-cover rounded-full" />
+      <div>
+        <p class="text-[#8B0000] text-lg sm:text-xl font-semibold">
+          Who we are?
+        </p>
+        <p class="text-sm sm:text-base text-gray-600">
+          Most Loved Preschool
+        </p>
+        <p class="font-bold text-base sm:text-lg mt-1 cursor-pointer hover:text-[#8B0000]">
+          Know More
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-[#F8F8F8] border border-[#E5E7EB] p-5 rounded-3xl hover:shadow-lg transition duration-300">
+      <img src="/images/childavatar1.webp" class="h-14 w-14 sm:h-16 sm:w-16 object-cover rounded-full" />
+      <div>
+        <p class="text-[#8B0000] text-lg sm:text-xl font-semibold">
+          Who we are?
+        </p>
+        <p class="text-sm sm:text-base text-gray-600">
+          Most Loved Preschool
+        </p>
+        <p class="font-bold text-base sm:text-lg mt-1 cursor-pointer hover:text-[#8B0000]">
+          Know More
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+	
+	
+	
+	
+	
+	
+	
+	
+    <section>
+      <div
+        class="bg-[#FFB100] flex items-center justify-around rounded-3xl p-2"
+      >
+        <div
+          class="text-[14px] lg:text-5xl px-4 flex flex-col gap-3 items-center"
+        >
+          <p>A Loving Start To</p>
+          <span
+            class="bg-[#8B0000] text-white px-2 w-[110px] lg:w-fit lg:px-10 lg:py-2 rounded-lg"
+            >Bright Future</span
+          >
+        </div>
+        <img th:src="@{/images/homeimage.webp}" class="h-[10rem] lg:h-[16vw]" />
+      </div>
+    </section>
+
+    <!-- subhero section -->
+
+    <section class="bg-white my-6 flex items-center justify-center p-6 md:p-12">
+      <div
+        class="max-w-7xl w-full flex flex-col lg:flex-row gap-12 items-center"
+      >
+        <div class="lg:w-1/3 space-y-6">
+          <h1 class="text-5xl font-bold text-slate-900 leading-tight">
+            Build your child's dream with Oratrics
+          </h1>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <button
+            class="bg-[#FFB800] hover:bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-xl shadow-lg transition-all active:scale-95"
+          >
+            Book Now
+          </button>
+        </div>
+
+        <div
+          class="lg:w-2/3 w-full grid grid-cols-1 md:grid-cols-3 gap-4 h-fit"
+        >
+          <div class="flex flex-col gap-4">
+            <div class="h-2/3 rounded-2xl overflow-hidden">
+              <img
+                th:src="@{/images/grid1.webp}"
+                alt="Kids playing"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="h-1/3 bg-[#FFB800] rounded-2xl p-6 flex flex-col justify-center"
+            >
+              <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
+              <p class="text-xs leading-snug">
+                The Seven Petal Approach is our proprietary learning method that
+                supports holistic development, language
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <div
+              class="h-1/2 bg-[#1A1A5E] rounded-2xl p-6 flex flex-col justify-center text-white border-2 border-blue-400"
+            >
+              <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
+              <p class="text-xs leading-snug opacity-90">
+                The Seven Petal Approach is our proprietary learning method that
+                supports holistic development, language
+              </p>
+            </div>
+            <div class="h-1/2 rounded-2xl overflow-hidden">
+              <img
+                th:src="@{/images/grid2.webp}"
+                alt="Art class"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <div class="h-2/5 rounded-2xl overflow-hidden">
+              <img
+                th:src="@{/images/grid3.webp}"
+                alt="Learning"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="h-3/5 bg-[#8B0000] rounded-2xl p-6 flex flex-col justify-center text-white"
+            >
+              <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
+              <p class="text-xs leading-snug opacity-90">
+                The Seven Petal Approach is our proprietary learning method that
+                supports holistic development, language
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- client say -->
+    <section>
+      <div
+        class="flex flex-col lg:flex-row items-center gap-10 justify-between"
+      >
+        <image th:src="@{/images/client.png}" class="rounded-3xl" />
+        <div class="flex flex-col gap-2">
+          <span
+            class="text-sm w-fit text-[#5751E1] bg-[#EFEEFE] px-2 py-1 rounded-2xl"
+            >Testimonials</span
+          >
+          <h2 class="text-4xl font-bold text-[#8B0000]">
+            What’s our client Say About us
+          </h2>
+          <span class="flex"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#fffa33"
+                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
+              />
+            </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#fffa33"
+                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#fffa33"
+                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#fffa33"
+                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#fffa33"
+                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
+              />
+            </svg>
+          </span>
+          <p class="text-lg italic text-gray-700">
+            “Manage and streamline operations acrosers multiple locations wear
+            sales channels, and employees toter improve efficiency stre sales
+            channe amline“
+          </p>
+          <span class="text-[#5751E1] font-semibold">Brooklyn Simmons</span>
+          <span class="text-sm text-gray-500">Engineer</span>
+        </div>
+      </div>
+    </section>
+
+   <section class="py-16 px-4 lg:px-10 overflow-hidden">
+
+  <!-- Heading -->
+  <div class="text-center mb-12">
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">
+      World Class Standards
+    </h2>
+  </div>
+
+  <!-- Slider Wrapper -->
+  <div class="relative overflow-hidden">
+    <div id="slider" class="flex gap-6 transition-transform duration-700 ease-in-out">
+
+      <!-- CARD TEMPLATE -->
+      <!-- Card 1 -->
+      <div
+        class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
+        th:style="'background-image: url(' + @{/images/yellowContainer.png} + ')'"
+      >
+        <h3 class="text-lg font-bold">Safety and Security</h3>
+        <p class="text-xs mt-3 leading-tight opacity-90">
+          CCTV cameras, secure entry/exit, child-proof infrastructure and strict sanitization routines.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
+        th:style="'background-image: url(' + @{/images/maroonContainer.png} + ')'"
+      >
+        <h3 class="text-lg font-bold">Qualified Staff</h3>
+        <p class="text-xs mt-3 leading-tight opacity-90">
+          Early childhood trained teachers who are nurturing and skilled in positive behavior reinforcement.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
+        th:style="'background-image: url(' + @{/images/blueContainer.png} + ')'"
+      >
+        <h3 class="text-lg font-bold">International Curriculum</h3>
+        <p class="text-xs mt-3 leading-tight opacity-90">
+          Structured learning blended with creative play fostering literacy, numeracy and global exposure.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div
+        class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
+        th:style="'background-image: url(' + @{/images/greenContainer.png} + ')'"
+      >
+        <h3 class="text-lg font-bold">Child-Friendly Infrastructure</h3>
+        <p class="text-xs mt-3 leading-tight opacity-90">
+          Bright classrooms, safe play areas and clean child-sized facilities.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div
+        class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
+        th:style="'background-image: url(' + @{/images/yellowContainer.png} + ')'"
+      >
+        <h3 class="text-lg font-bold">Positive Environment</h3>
+        <p class="text-xs mt-3 leading-tight opacity-90">
+          Warm, encouraging atmosphere fostering independence and emotional safety.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div
+        class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
+        th:style="'background-image: url(' + @{/images/maroonContainer.png} + ')'"
+      >
+        <h3 class="text-lg font-bold">Health and Hygiene</h3>
+        <p class="text-xs mt-3 leading-tight opacity-90">
+          Regular cleaning schedules, safe drinking water and hygienic food handling.
+        </p>
+      </div>
+
+      <!-- Card 7 -->
+      <div
+        class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
+        th:style="'background-image: url(' + @{/images/blueContainer.png} + ')'"
+      >
+        <h3 class="text-lg font-bold">Low Staff-Child Ratio</h3>
+        <p class="text-xs mt-3 leading-tight opacity-90">
+          Ensures individual attention for every child promoting better outcomes.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const slider = document.getElementById("slider");
+  let scrollAmount = 0;
+
+  setInterval(() => {
+    const cardWidth = slider.children[0].offsetWidth + 24;
+    scrollAmount += cardWidth;
+
+    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+      scrollAmount = 0;
+    }
+
+    slider.style.transform = `translateX(-${scrollAmount}px)`;
+  }, 3000);
+</script>
+
+    <div
+      x-data="{ expanded: false }"
+      class="bg-[#1A1A5E] overflow-hidden lg:h-fit rounded-2xl min-h-screen p-10 font-sans text-white"
+    >
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-2">Our Global</h2>
+        <h3
+          class="text-4xl md:text-6xl font-bold text-[#FFB800] mb-6"
+          style="font-family: Caveat, cursive"
+        >
+          Early Childhood Programs
+        </h3>
+        <p
+          class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto mb-8 uppercase tracking-wide"
+        >
+          Internationally Benchmarked Learning Pathways From Infancy To
+          Kindergarten Designed To Build Confident, Expressive And Future-Ready
+          Global Citizens.
+        </p>
+        <button
+          class="bg-white text-[#1A1A5E] px-8 py-3 rounded-full font-bold flex items-center gap-2 mx-auto hover:bg-gray-200 transition-colors"
+        >
+          Learn more
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L11.586 9H7a1 1 0 100 2h4.586l-2.293 2.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- progam cards -->
+
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10 transition-all duration-1000 ease-in-out overflow-hidden"
+        :class="expanded ? 'max-h-[5000px]' : 'max-h-[950px]'"
+      >
+        <div
+          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
+        >
+          <div
+            class="relative lg:h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
+          >
+            <img
+              th:src="@{/images/rounded.png}"
+              alt="Childhood program"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute top-4 right-4 transform -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-slate-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="px-2 pb-4">
+            <h4 class="text-[10px] lg:text-xl font-bold mb-2">
+              Lorem ipsum diodet
+            </h4>
+            <p class="text-gray-500 text-[8px] lg:text-xs leading-relaxed">
+              Build confidence in communication, teamwork, and problem-solving.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
+        >
+          <div
+            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
+          >
+            <img
+             th:src="@{/images/rounded.png}"
+              alt="Childhood program"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-slate-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="px-2 pb-4">
+            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
+            <p class="text-gray-500 text-xs leading-relaxed">
+              Build confidence in communication, teamwork, and problem-solving.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
+        >
+          <div
+            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
+          >
+            <img
+              th:src="@{/images/rounded.png}"
+              alt="Childhood program"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-slate-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="px-2 pb-4">
+            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
+            <p class="text-gray-500 text-xs leading-relaxed">
+              Build confidence in communication, teamwork, and problem-solving.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
+        >
+          <div
+            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
+          >
+            <img
+             th:src="@{/images/rounded.png}"
+              alt="Childhood program"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-slate-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="px-2 pb-4">
+            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
+            <p class="text-gray-500 text-xs leading-relaxed">
+              Build confidence in communication, teamwork, and problem-solving.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
+        >
+          <div
+            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
+          >
+            <img
+             th:src="@{/images/rounded.png}"
+              alt="Childhood program"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-slate-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="px-2 pb-4">
+            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
+            <p class="text-gray-500 text-xs leading-relaxed">
+              Build confidence in communication, teamwork, and problem-solving.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
+        >
+          <div
+            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
+          >
+            <img
+              th:src="@{/images/rounded.png}"
+              alt="Childhood program"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-slate-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="px-2 pb-4">
+            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
+            <p class="text-gray-500 text-xs leading-relaxed">
+              Build confidence in communication, teamwork, and problem-solving.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center mt-12">
+        <button
+          x-show="!expanded"
+          @click="expanded = true"
+          class="bg-[#8B0000] text-white px-10 py-3 rounded-full hover:shadow-md transition-all shadow-xl"
+        >
+          Read More Programs
+        </button>
+
+        <button
+          x-show="expanded"
+          @click="expanded = false"
+          class="border-2 border-white text-white px-10 py-3 rounded-full font-bold hover:bg-white hover:text-[#1A1A5E] transition-all"
+        >
+          Show Less
+        </button>
+      </div>
+    </div>
+
+    <!-- transform Video -->
+    <section class="my-10">
+      <div
+        class="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-center"
+      >
+        <img th:src="@{/images/transform.png}" class="h-70 lg:h-90 object-cover" />
+        <div class="flex flex-col gap-2 lg:w-[450px]">
+          <h2 class="text-3xl font-bold">
+            Transform Your Language with Our Courses
+          </h2>
+          <p class="text-[#6D6C80]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <button
+            class="bg-[#FFB800] w-fit hover:bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-xl shadow-lg transition-all active:scale-95"
+          >
+            Book Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section>
+      <div
+        class="flex justify-between items-center my-6"
+        style="scrollbar-width: none"
+      >
+        <span class="text-xl lg:text-3xl"
+          >Lorem Ipsum <span class="text-[#8B0000]">Diodet</span></span
+        >
+        <button
+          class="More Articles border border-[#8B0000] rounded-3xl text-[#8B0000] px-6 py-2 hover:bg-[#8B0000] hover:text-white transition ease-in-out"
+        >
+          More Articles
+        </button>
+      </div>
+      <div
+        class="flex flex-nowrap snap-x snap-mandatory overflow-x-auto gap-4 lg:flex-row items-center justify-between"
+        style="scrollbar-width: none"
+        x-data="{ articles :  [
+            {
+              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+              title:`10 Fun Learning Methods`,
+              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
+            },
+            {
+              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+              title:`10 Fun Learning Methods`,
+              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
+            },
+            {
+              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+              title:`10 Fun Learning Methods`,
+              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
+            },
+            {
+              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+              title:`10 Fun Learning Methods`,
+              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
+            },
+            {
+              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+              title:`10 Fun Learning Methods`,
+              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
+            },
+          ] }"
+      >
+        <template x-for="item in articles">
+          <div
+            class="w-[300px] shrink-0 bg-[#F4F4F4] rounded-4xl snap-start overflow-hidden"
+          >
+            <img :src="item.img" class="rounded-4xl" />
+
+            <div class="flex flex-col gap-1 p-3">
+              <p class="text-lg font-semibold" x-text="item.title"></p>
+              <p class="text-sm text-[#7B7B7B]" x-text="item.description"></p>
+              <button
+                class="bg-[#8B0000] hover:shadow-lg transition ease-in-out duration-100 mt-2 w-fit text-white rounded-3xl px-6 py-2"
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+        </template>
+
+        </div>
+      </div>
+    </section>
+
+   <footer class="my-16 px-4 lg:px-10">
+  
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    
+    <!-- Google Map -->
+    <div class="w-full">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.137545143309!2d81.00774787489343!3d26.867370762038664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be380ae26ce41%3A0x2ba5a1fdfad55c8a!2sOratrics%3A%20The%20Future%20Human%20School!5e0!3m2!1sen!2sin!4v1771752814578!5m2!1sen!2sin"
+        class="w-full h-[250px] sm:h-[350px] lg:h-[400px] rounded-2xl border-4 border-[#8B0000]"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="bg-white p-6 sm:p-8 shadow-xl rounded-2xl w-full">
+      
+      <form class="flex flex-col gap-5">
+
+        <div>
+          <label class="text-[#8D8D8D] text-sm sm:text-base">
+            First Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter Your Name"
+            class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]"
+          />
+        </div>
+
+        <div>
+          <label class="text-[#8D8D8D] text-sm sm:text-base">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="xyz@gmail.com"
+            class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]"
+          />
+        </div>
+
+        <div>
+          <label class="text-[#8D8D8D] text-sm sm:text-base">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="+91 0000000000"
+            class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]"
+          />
+        </div>
+
+        <button
+          class="bg-[#FFB100] hover:bg-[#e5a000] transition duration-300 py-3 rounded-lg font-semibold mt-3"
+        >
+          Send Message
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+
+</footer>
+	
+	
+	
+	
+	
+	
+  </body>
+</html>
