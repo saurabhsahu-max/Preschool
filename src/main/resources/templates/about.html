@@ -676,7 +676,7 @@ function serviceSlider() {
       <div class="circle-box">
         <div class="dashed-circle"></div>
 
-        <img src="assets/360/gemi.png" class="center-img" alt="" />
+        <img th:src="@{/images/360/gemi.png}" class="center-img" alt="" />
 
         <template x-for="item in items" :key="item.text">
           <div class="item" :class="item.pos">

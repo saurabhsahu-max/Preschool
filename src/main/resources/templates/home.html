@@ -28,27 +28,28 @@
   </head>
   <body class="mx-3 sm:mx-25 lg:mx-35 xl:mx-35 font-sans text-gray-900">
     <!-- Navbar -->
-    <nav
-      class="bg-[#FFB100] rounded-lg my-5 flex items-center justify-between p-6"
-    >
-      <img
-        th:src="@{/images/logo.png}"
-        alt="Oratrics Logo"
-        class="h-[16vw] lg:h-[4vw]"
-      />
-      <div
-        class="hidden sm:flex lg:flex md:flex items-center gap-4 font-semibold"
-      >
-        <span>Home</span>
-        <span>About Us</span>
-        <span>Admission</span>
-        <span>Gallery</span>
-      </div>
-      <button class="bg-[#8B0000] text-white p-2 rounded-sm">
-        Register Now
-      </button>
-    </nav>
+	<nav class="bg-[#FFB100] rounded-lg my-5 flex items-center justify-between p-6">
+	  
+	  <img
+	    th:src="@{/images/logo.png}"
+	    alt="Oratrics Logo"
+	    class="h-[16vw] lg:h-[4vw]"
+	  />
 
+	  <div class="hidden sm:flex lg:flex md:flex items-center gap-4 font-semibold">
+	    <a th:href="@{/}" class="hover:text-white">Home</a>
+	    <a th:href="@{/about}" class="hover:text-white">About Us</a>
+	    <a th:href="@{/admission}" class="hover:text-white">Admission</a>
+	    <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
+	  </div>
+
+	  <a th:href="@{/register}" class="bg-[#8B0000] text-white p-2 rounded-sm">
+	    Register Now
+	  </a>
+
+	</nav>
+	
+	
     <!-- Hero Section -->
     <section
       x-data="{ 
@@ -148,8 +149,13 @@
       </div>
     </section>
 
-   <!-- banner-1 -->
-<section class="my-10 px-4 lg:px-10">
+	
+	<!--Hero Section  End -->
+	
+	
+	
+   <!-- birds Section -->
+  <section class="my-10 px-4 lg:px-10">
   
   <!-- Heading -->
   <div class="flex justify-between items-center flex-wrap gap-3">
@@ -173,11 +179,9 @@
 
       <div class="flex flex-col">
         <p class="text-[#8B0000] text-lg sm:text-xl font-semibold">
-          Who we are?
+          Present in 20+ <br> Countries
         </p>
-        <p class="text-sm sm:text-base text-gray-600">
-          Most Loved Preschool
-        </p>
+        
         <p class="font-bold text-base sm:text-lg mt-1 cursor-pointer hover:text-[#8B0000]">
           Know More
         </p>
@@ -189,11 +193,9 @@
       <img src="/images/childavatar1.webp" class="h-14 w-14 sm:h-16 sm:w-16 object-cover rounded-full" />
       <div>
         <p class="text-[#8B0000] text-lg sm:text-xl font-semibold">
-          Who we are?
+          International Early Learning Standards
         </p>
-        <p class="text-sm sm:text-base text-gray-600">
-          Most Loved Preschool
-        </p>
+        
         <p class="font-bold text-base sm:text-lg mt-1 cursor-pointer hover:text-[#8B0000]">
           Know More
         </p>
@@ -204,11 +206,9 @@
       <img src="/images/childavatar1.webp" class="h-14 w-14 sm:h-16 sm:w-16 object-cover rounded-full" />
       <div>
         <p class="text-[#8B0000] text-lg sm:text-xl font-semibold">
-          Who we are?
+          Personality + Academics + Global Exposure
         </p>
-        <p class="text-sm sm:text-base text-gray-600">
-          Most Loved Preschool
-        </p>
+        
         <p class="font-bold text-base sm:text-lg mt-1 cursor-pointer hover:text-[#8B0000]">
           Know More
         </p>
@@ -251,13 +251,14 @@
       >
         <div class="lg:w-1/3 space-y-6">
           <h1 class="text-5xl font-bold text-slate-900 leading-tight">
-            Build your child's dream with Oratrics
+             Make your kids master 
           </h1>
           <p class="text-slate-600 text-sm leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+			• Confidence to speak<br>
+			• Clarity to express<br>
+			• Courage to lead<br>
+			• Intelligence to adapt<br>
+			• Exposure beyond borders
           </p>
           <button
             class="bg-[#FFB800] hover:bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-xl shadow-lg transition-all active:scale-95"
@@ -282,8 +283,7 @@
             >
               <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
               <p class="text-xs leading-snug">
-                The Seven Petal Approach is our proprietary learning method that
-                supports holistic development, language
+                TYour Child Is Not Just Preparing for School. They Are Preparing for the World.
               </p>
             </div>
           </div>
@@ -294,8 +294,7 @@
             >
               <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
               <p class="text-xs leading-snug opacity-90">
-                The Seven Petal Approach is our proprietary learning method that
-                supports holistic development, language
+                Most preschools prepare children for Grade 
               </p>
             </div>
             <div class="h-1/2 rounded-2xl overflow-hidden">
@@ -320,8 +319,7 @@
             >
               <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
               <p class="text-xs leading-snug opacity-90">
-                The Seven Petal Approach is our proprietary learning method that
-                supports holistic development, language
+                The world your child will enter will demand more than alphabets and numbers.
               </p>
             </div>
           </div>

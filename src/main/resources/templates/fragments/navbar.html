@@ -1,0 +1,20 @@
+<nav class="bg-[#FFB100] rounded-lg my-5 flex items-center justify-between p-6">
+  
+  <img
+    th:src="@{/images/logo.png}"
+    alt="Oratrics Logo"
+    class="h-[16vw] lg:h-[4vw]"
+  />
+
+  <div class="hidden sm:flex lg:flex md:flex items-center gap-4 font-semibold">
+    <a th:href="@{/}" class="hover:text-white">Home</a>
+    <a th:href="@{/about}" class="hover:text-white">About Us</a>
+    <a th:href="@{/admission}" class="hover:text-white">Admission</a>
+    <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
+  </div>
+
+  <a th:href="@{/register}" class="bg-[#8B0000] text-white p-2 rounded-sm">
+    Register Now
+  </a>
+
+</nav>
