@@ -6,6 +6,8 @@
     <title>Oratrics Pre-school | Play, Learn, Grow</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
@@ -62,26 +64,79 @@
   </head>
   <body class="mx-3 sm:mx-25 m-0 p-0 lg:mx-35 xl:mx-35 font-sans text-gray-900">
     <!-- Navbar -->
-	<nav class="bg-[#FFB100] rounded-lg my-5 flex items-center justify-between p-6">
-	  
-	  <img
-	    th:src="@{/images/logo.png}"
-	    alt="Oratrics Logo"
-	    class="h-[16vw] lg:h-[4vw]"
-	  />
+	<nav class="bg-[#FFB100] rounded-lg my-5 px-4 py-4">
 
-	  <div class="hidden sm:flex lg:flex md:flex items-center gap-4 font-semibold">
-	    <a th:href="@{/}" class="hover:text-white">Home</a>
-	    <a th:href="@{/about}" class="hover:text-white">About Us</a>
-	    <a th:href="@{/admission}" class="hover:text-white">Admission</a>
-	    <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
+	  <div class="flex items-center justify-between">
+
+	    <!-- Logo -->
+	    <img
+	      th:src="@{/images/logo.png}"
+	      alt="Oratrics Logo"
+	      class="h-[40px] md:h-[60px]"
+	    />
+
+	    <!-- Center Menu Desktop -->
+	    <div class="hidden md:flex flex-1 justify-center gap-8 font-semibold">
+	      <a th:href="@{/}" class="hover:text-white">Home</a>
+	      <a th:href="@{/about}" class="hover:text-white">About Us</a>
+	      <a th:href="@{/admission}" class="hover:text-white">Admission</a>
+	      <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
+	    </div>
+
+	    <!-- Right Section -->
+	    <div class="flex items-center">
+
+	      <!-- Desktop Button -->
+	      <a th:href="@{/register}"
+	         class="hidden md:block bg-[#8B0000] text-white px-5 py-2 rounded-sm">
+	        Register Now
+	      </a>
+
+	      <!-- Hamburger -->
+	      <button id="menu-btn" class="md:hidden text-3xl ml-3">
+	        ☰
+	      </button>
+
+	    </div>
+
 	  </div>
 
-	  <a th:href="@{/register}" class="bg-[#8B0000] text-white p-2 rounded-sm">
-	    Register Now
-	  </a>
+	  <!-- Mobile Menu -->
+	  <div id="mobile-menu"
+	       class="hidden flex flex-col gap-4 mt-6 font-semibold md:hidden">
+
+	      <a th:href="@{/}" class="block">Home</a>
+	      <a th:href="@{/about}" class="block">About Us</a>
+	      <a th:href="@{/admission}" class="block">Admission</a>
+	      <a th:href="@{/gallery}" class="block">Gallery</a>
+
+	      <a th:href="@{/register}"
+	         class="bg-[#8B0000] text-white text-center py-3 rounded w-full">
+	        Register Now
+	      </a>
+
+	  </div>
 
 	</nav>
+
+	<script>
+
+	const btn = document.getElementById("menu-btn");
+	const menu = document.getElementById("mobile-menu");
+
+	btn.addEventListener("click", () => {
+
+	  menu.classList.toggle("hidden");
+
+	  if(menu.classList.contains("hidden")){
+	      btn.innerHTML = "☰";
+	  } else {
+	      btn.innerHTML = "✕";
+	  }
+
+	});
+
+	</script>
 	
 	
     <!-- Hero Section -->
@@ -384,7 +439,7 @@
 	          Typical Preschool
 	        </div>
 
-	        <ul class="mt-6 space-y-3 text-[18px] font-normal text-black leading-relaxed">
+	        <ul class="mt-6 space-y-3 text-[18px] font-normal text-gray-500 leading-relaxed">
 	          <li>• Focus on rote phonics</li>
 	          <li>• Worksheets & memorisation</li>
 	          <li>• Limited exposure</li>
@@ -406,7 +461,7 @@
 	          Oratrics Kidzz
 	        </div>
 
-	        <ul class="mt-6 space-y-3 text-[18px] font-normal text-black leading-relaxed">
+	        <ul class="mt-6 space-y-3 text-[18px] font-normal text-gray-500 leading-relaxed">
 	          <li>• Advanced phonics + articulation training</li>
 	          <li>• Experiential, activity-based learning</li>
 	          <li>• Global student interactions (US, UK, UAE, Canada)</li>
@@ -649,7 +704,7 @@
 	                 class="rounded-xl mb-4 w-full"
 	                 alt="Pre Nursery"/>
 	            <h4 class="font-bold text-lg text-[#24135f]">Pre Nursery</h4>
-	            <p class="text-sm text-purple-700 mt-2">
+	            <p class="text-sm text-black mt-2">
 	              Play based foundation learning with sensory activities, motor skills and joyful classroom interaction.
 	            </p>
 	          </div>
@@ -660,7 +715,7 @@
 	                 class="rounded-xl mb-4 w-full"
 	                 alt="Nursery"/>
 	            <h4 class="font-bold text-lg text-[#24135f]">Nursery</h4>
-	            <p class="text-sm text-purple-700 mt-2">
+	            <p class="text-sm text-black mt-2">
 	              Language development, vocabulary building, social skills and confident expressive communication.
 	            </p>
 	          </div>
@@ -671,7 +726,7 @@
 	                 class="rounded-xl mb-4 w-full"
 	                 alt="Pre-KG"/>
 	            <h4 class="font-bold text-lg text-[#24135f]">Pre-KG</h4>
-	            <p class="text-sm text-purple-700 mt-2">
+	            <p class="text-sm text-black mt-2">
 	              Early literacy and numeracy with storytelling, leadership games and creative thinking skills.
 	            </p>
 	          </div>
@@ -682,7 +737,7 @@
 	                 class="rounded-xl mb-4 w-full"
 	                 alt="LKG"/>
 	            <h4 class="font-bold text-lg text-[#24135f]">LKG</h4>
-	            <p class="text-sm text-purple-700 mt-2">
+	            <p class="text-sm text-black mt-2">
 	              Reading readiness, teamwork focus, personality growth and basic critical thinking skills.
 	            </p>
 	          </div>
@@ -693,7 +748,7 @@
 	                 class="rounded-xl mb-4 w-full"
 	                 alt="UKG"/>
 	            <h4 class="font-bold text-lg text-[#24135f]">UKG</h4>
-	            <p class="text-sm text-purple-700 mt-2">
+	            <p class="text-sm text-black mt-2">
 	              Complete school readiness with presentation skills, confidence building and emotional growth.
 	            </p>
 	          </div>
@@ -704,7 +759,7 @@
 	                 class="rounded-xl mb-4 w-full"
 	                 alt="Extended Care"/>
 	            <h4 class="font-bold text-lg text-[#24135f]">Extended Care</h4>
-	            <p class="text-sm text-purple-700 mt-2">
+	            <p class="text-sm text-black mt-2">
 	              After school support with homework help, creative activities and supervised care.
 	            </p>
 	          </div>
@@ -715,7 +770,7 @@
 	                 class="rounded-xl mb-4 w-full"
 	                 alt="Daycare"/>
 	            <h4 class="font-bold text-lg text-[#24135f]">Daycare</h4>
-	            <p class="text-sm text-purple-700 mt-2">
+	            <p class="text-sm text-black mt-2">
 	              Safe nurturing environment with play learning, communication skills and social bonding.
 	            </p>
 	          </div>
@@ -726,7 +781,7 @@
 	                 class="rounded-xl mb-4 w-full"
 	                 alt="Teacher Training"/>
 	            <h4 class="font-bold text-lg text-[#24135f]">Teacher Training</h4>
-	            <p class="text-sm text-purple-700 mt-2">
+	            <p class="text-sm text-black mt-2">
 	              Professional training with modern teaching methods and classroom management skills.
 	            </p>
 	          </div>
@@ -757,98 +812,152 @@
 	  
 
     <!-- transform Video -->
-    <section class="my-10">
-      <div
-        class="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-center"
-      >
-        <img th:src="@{/images/transform.png}" class="h-70 lg:h-90 object-cover" />
-        <div class="flex flex-col gap-2 lg:w-[450px]">
-          <h2 class="text-3xl font-bold">
-            Transform Your Language with Our Courses
-          </h2>
-          <p class="text-[#6D6C80]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <button
-            class="bg-[#FFB800] w-fit hover:bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-xl shadow-lg transition-all active:scale-95"
-          >
-            Book Now
-          </button>
-        </div>
-      </div>
-    </section>
+	<section class="my-10">
+	  <div
+	    class="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-center px-6"
+	  >
+	    
+	    <!-- Image -->
+	    <img 
+	      th:src="@{/images/transform.png}" 
+	      alt="Oratrics Kids Learning"
+	      class="h-70 lg:h-90 object-cover"
+	    />
 
-    <!-- Articles Section -->
-    <section>
-      <div
-        class="flex justify-between items-center my-6"
-        style="scrollbar-width: none"
-      >
-        <span class="text-xl lg:text-3xl"
-          >Lorem Ipsum <span class="text-[#8B0000]">Diodet</span></span
-        >
-        <button
-          class="More Articles border border-[#8B0000] rounded-3xl text-[#8B0000] px-6 py-2 hover:bg-[#8B0000] hover:text-white transition ease-in-out"
-        >
-          More Articles
-        </button>
-      </div>
-      <div
-        class="flex flex-nowrap snap-x snap-mandatory overflow-x-auto gap-4 lg:flex-row items-center justify-between"
-        style="scrollbar-width: none"
-        x-data="{ articles :  [
-            {
-              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
-              title:`10 Fun Learning Methods`,
-              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
-            },
-            {
-              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
-              title:`10 Fun Learning Methods`,
-              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
-            },
-            {
-              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
-              title:`10 Fun Learning Methods`,
-              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
-            },
-            {
-              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
-              title:`10 Fun Learning Methods`,
-              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
-            },
-            {
-              img:`https://images.unsplash.com/photo-1620503292890-c597f62cce8d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
-              title:`10 Fun Learning Methods`,
-              description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod ...`
-            },
-          ] }"
-      >
-        <template x-for="item in articles">
-          <div
-            class="w-[300px] shrink-0 bg-[#F4F4F4] rounded-4xl snap-start overflow-hidden"
-          >
-            <img :src="item.img" class="rounded-4xl" />
+	    <!-- Content -->
+	    <div class="flex flex-col gap-4 lg:w-[450px]">
 
-            <div class="flex flex-col gap-1 p-3">
-              <p class="text-lg font-semibold" x-text="item.title"></p>
-              <p class="text-sm text-[#7B7B7B]" x-text="item.description"></p>
-              <button
-                class="bg-[#8B0000] hover:shadow-lg transition ease-in-out duration-100 mt-2 w-fit text-white rounded-3xl px-6 py-2"
-              >
-                Read More
-              </button>
-            </div>
-          </div>
-        </template>
+	      <h2 class="text-3xl font-bold">
+	        Shape Bright Futures with Oratrics Kids
+	      </h2>
 
-        </div>
-      </div>
-    </section>
+	      <p class="text-[#6D6C80]">
+	        At Oratrics Kids Preschool, we create a joyful and nurturing environment 
+	        where children learn through play, creativity, and interactive activities. 
+	        Our early childhood programs focus on developing communication skills, 
+	        confidence, curiosity, and social growth so that every child builds a 
+	        strong foundation for lifelong learning.
+	      </p>
 
+	      <button
+	        class="bg-[#FFB800] w-fit hover:bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-xl shadow-lg transition-all active:scale-95"
+	      >
+	        Enroll Now
+	      </button>
+
+	    </div>
+
+	  </div>
+	</section>
+
+	
+	
+	
+	<!-- Articles Section Start -->
+
+	<section class="py-20 bg-white">
+	  <div class="w-[90%] max-w-[1200px] mx-auto">
+
+	    <!-- Header -->
+	    <div class="flex flex-wrap items-center gap-4 mb-10">
+
+	      <h2 class="font-bold text-[clamp(28px,4vw,50px)] leading-[1.2] text-black">
+	        What the World Is Saying About 
+	        <span class="italic text-[#800000]">Oratrics ?</span>
+	      </h2>
+
+	      <button class="ml-auto border-[1.5px] border-[#b30000] text-[#b30000] px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#b30000] hover:text-white transition">
+	        More articles ➜
+	      </button>
+
+	    </div>
+
+	    <!-- Articles Grid -->
+	    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-10">
+
+	      <!-- Card 1 -->
+	      <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
+	        <img th:src="@{/images/article1.png}" class="w-full h-[160px] object-cover">
+
+	        <div class="p-4 flex flex-col justify-between flex-1">
+	          <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
+	            Oratrics Launches ‘The Future Human Program™’ to Equip Children with 21st-Century Life Skills
+	          </p>
+
+	          <a href="https://indianews24.asia/oratrics-launches-the-future-human-program-to-equip-children-with-21st-century-life-skills/"
+	             target="_blank"
+	             class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
+	             Read More
+	          </a>
+	        </div>
+	      </div>
+
+	      <!-- Card 2 -->
+	      <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
+	        <img th:src="@{/images/article2.webp}" class="w-full h-[160px] object-cover">
+
+	        <div class="p-4 flex flex-col justify-between flex-1">
+	          <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
+	            Oratrics Elevates Public Speaking & Personality Development (Yukon, Oklahoma – July 16, 2024)
+	          </p>
+
+	          <a href="https://usinsider.com/oratrics-elevates-public-speaking-personality-development/"
+	             target="_blank"
+	             class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
+	             Read More
+	          </a>
+	        </div>
+	      </div>
+
+	      <!-- Card 3 -->
+	      <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
+	        <img th:src="@{/images/article3.png}" class="w-full h-[160px] object-cover">
+
+	        <div class="p-4 flex flex-col justify-between flex-1">
+	          <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
+	            Oratrics Launches ‘The Future Human Program™’ to Equip Children with Real-World Skills for the 21st Century
+	          </p>
+
+	          <a href="https://indiaeducationdiary.in/oratrics-launches-the-future-human-program-to-equip-children-with-real-world-skills-for-the-21st-century/"
+	             target="_blank"
+	             class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
+	             Read More
+	          </a>
+	        </div>
+	      </div>
+
+	      <!-- Card 4 -->
+	      <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
+	        <img th:src="@{/images/article4.png}" class="w-full h-[160px] object-cover">
+
+	        <div class="p-4 flex flex-col justify-between flex-1">
+	          <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
+	            Oratrics launches ‘The Future Human Program’ to equip kids with 21st-Century life skills
+	          </p>
+
+	          <a href="https://mediabrief.com/oratrics-launches-the-future-human-program-to-equip-kids-with-21st-century-life-skills/"
+	             target="_blank"
+	             class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
+	             Read More
+	          </a>
+	        </div>
+	      </div>
+
+	    </div>
+
+	  </div>
+	</section>
+
+	<!-- Articles Section End -->
+	
+	
+	
+	
+	<!-- Article section end  -->
+	
+	
+	
+	
    <footer class="my-16 px-4 lg:px-10">
   
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -919,69 +1028,102 @@
 </footer>
 	
 
-<section class="w-full bg-red-700 relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#24135f] py-16 text-white overflow-x-hidden">
+<section class="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#800000] text-white py-16 overflow-x-hidden">
 
-  <div class="w-full px-6 md:px-12 lg:px-20 py-16">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
       <!-- Column 1 -->
       <div>
-        <h2 class="text-2xl font-bold mb-4">Transparent</h2>
-        <p class="text-red-200 mb-6">
-          Fun, engaging <br>
-          and authentic webinars
+
+        <img 
+          th:src="@{/images/whitelogo.png}" 
+          alt="Oratrics Kids Logo"
+          class="h-20 mb-4"
+        >
+
+        <p class="text-red-200 mb-6 leading-relaxed">
+          Oratrics Kids Preschool focuses on nurturing creativity, confidence,
+          and communication skills in young learners through fun learning activities.
         </p>
 
-        <div class="flex gap-4">
-          <a href="#" class="hover:text-gray-200">LinkedIn</a>
-          <a href="#" class="hover:text-gray-200">YouTube</a>
-          <a href="#" class="hover:text-gray-200">Twitter</a>
+        <!-- Social Icons -->
+
+        <div class="flex gap-5 text-xl">
+
+          <a href="https://www.facebook.com/oratrics" class="hover:text-yellow-400 transition">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <a href="https://www.instagram.com/oratrics" class="hover:text-yellow-400 transition">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="https://www.youtube.com/@OratricsOfficial" class="hover:text-yellow-400 transition">
+            <i class="fab fa-youtube"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/company/oratrics/" class="hover:text-yellow-400 transition">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
         </div>
+
       </div>
 
       <!-- Column 2 -->
       <div>
-        <h3 class="font-semibold mb-4">Product</h3>
+        <h3 class="font-semibold mb-5 text-lg">Quick Links</h3>
+
         <ul class="space-y-3 text-red-200">
-          <li><a href="#" class="hover:text-white">Features</a></li>
-          <li><a href="#" class="hover:text-white">HubSpot Integration</a></li>
-          <li><a href="#" class="hover:text-white">What's new</a></li>
-          <li><a href="#" class="hover:text-white">Pricing</a></li>
-          <li><a href="#" class="hover:text-white">Log in</a></li>
+          <li><a th:href="@{/}" class="hover:text-white">Home</a></li>
+          <li><a th:href="@{/about}" class="hover:text-white">About Us</a></li>
+          <li><a th:href="@{/admission}" class="hover:text-white">Admissions</a></li>
+          <li><a th:href="@{/gallery}" class="hover:text-white">Gallery</a></li>
         </ul>
       </div>
 
       <!-- Column 3 -->
       <div>
-        <h3 class="font-semibold mb-4">Resources</h3>
+        <h3 class="font-semibold mb-5 text-lg">Programs</h3>
+
         <ul class="space-y-3 text-red-200">
-          <li><a href="#" class="hover:text-white">Learn</a></li>
-          <li><a href="#" class="hover:text-white">Videos</a></li>
-          <li><a href="#" class="hover:text-white">Help Center</a></li>
-          <li><a href="#" class="hover:text-white">Webinar Glossary</a></li>
+          <li><a href="#" class="hover:text-white">Play Group</a></li>
+          <li><a href="#" class="hover:text-white">Nursery</a></li>
+          <li><a href="#" class="hover:text-white">Junior KG</a></li>
+          <li><a href="#" class="hover:text-white">Senior KG</a></li>
         </ul>
       </div>
 
       <!-- Column 4 -->
       <div>
-        <h3 class="font-semibold mb-4">More</h3>
+        <h3 class="font-semibold mb-5 text-lg">Contact Us</h3>
+
         <ul class="space-y-3 text-red-200">
-          <li><a href="#" class="hover:text-white">Our story</a></li>
-          <li><a href="#" class="hover:text-white">We're hiring</a></li>
-          <li><a href="#" class="hover:text-white">Contrast vs. Livestorm</a></li>
-          <li><a href="#" class="hover:text-white">Contrast vs. Zoom</a></li>
+          <li>📍 Lucknow, Uttar Pradesh</li>
+          <li>📞 +91 745880098</li>
+          <li>📧 contact@oratrics.com</li>
         </ul>
+
+        <a th:href="@{/register}"
+          class="inline-block mt-6 bg-yellow-400 text-black px-5 py-2 rounded font-semibold hover:bg-yellow-300">
+          Register Now
+        </a>
+
       </div>
 
+    </div>
+
+    <!-- Bottom -->
+
+    <div class="border-t border-red-400 mt-12 pt-6 text-center text-red-200 text-sm">
+      © 2026 Oratrics Kids Preschool. All Rights Reserved.
     </div>
 
   </div>
 
 </section>
-	
-	
-	
 	
 	
   </body>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Page Not Found | Oratrics Kids</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+</head>
+
+<body class="overflow-x-hidden  bg-gray-50">
+
+
+
+<nav class="bg-[#FFB100] rounded-lg my-5 mx-[140px] px-4 py-4">
+
+<div class="flex items-center justify-between">
+
+<!-- Logo -->
+<img
+th:src="@{/images/logo.png}"
+alt="Oratrics Logo"
+class="h-[40px] md:h-[60px]"
+/>
+
+<!-- Desktop Menu -->
+
+<div class="hidden md:flex flex-1 justify-center gap-8 font-semibold">
+
+<a th:href="@{/}" class="hover:text-white">Home</a>
+<a th:href="@{/about}" class="hover:text-white">About Us</a>
+<a th:href="@{/admission}" class="hover:text-white">Admission</a>
+<a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
+
+</div>
+
+<!-- Right Side -->
+
+<div class="flex items-center">
+
+<a th:href="@{/register}"
+class="hidden md:block bg-[#8B0000] text-white px-5 py-2 rounded-sm">
+Register Now
+</a>
+
+<button id="menu-btn" class="md:hidden text-3xl ml-3">
+☰
+</button>
+
+</div>
+
+</div>
+
+<!-- Mobile Menu -->
+
+<div id="mobile-menu"
+class="hidden flex flex-col gap-4 mt-6 font-semibold md:hidden">
+
+<a th:href="@{/}" class="block">Home</a>
+<a th:href="@{/about}" class="block">About Us</a>
+<a th:href="@{/admission}" class="block">Admission</a>
+<a th:href="@{/gallery}" class="block">Gallery</a>
+
+<a th:href="@{/register}"
+class="bg-[#8B0000] text-white text-center py-3 rounded w-full">
+Register Now
+</a>
+
+</div>
+
+</nav>
+
+<!-- ================= 404 CONTENT ================= -->
+
+<section class="min-h-[60vh] flex items-center justify-center px-6 text-center">
+
+<div>
+
+<h1 class="text-7xl font-extrabold text-[#800000] mb-6">
+404
+</h1>
+
+<h2 class="text-3xl font-bold mb-4">
+Oops! Page Not Found
+</h2>
+
+<p class="text-gray-600 max-w-lg mx-auto mb-8">
+The page you are looking for might have been removed, had its name changed,
+or is temporarily unavailable. Please return to the homepage.
+</p>
+
+<a th:href="@{/}"
+class="bg-[#FFB100] hover:bg-yellow-500 text-black font-semibold px-8 py-3 rounded-lg shadow-lg transition">
+Go Back Home
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<section class="bg-[#800000] text-white py-16">
+
+<div class="max-w-7xl mx-auto px-[30px]">
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+<!-- Column 1 -->
+
+<div>
+
+<img
+th:src="@{/images/logo.png}"
+alt="Oratrics Kids Logo"
+class="h-14 mb-4"
+>
+
+<p class="text-red-200 mb-6 leading-relaxed">
+Oratrics Kids Preschool focuses on nurturing creativity, confidence,
+and communication skills in young learners through fun learning activities.
+</p>
+
+<div class="flex gap-5 text-xl">
+
+<a href="#" class="hover:text-yellow-400">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#" class="hover:text-yellow-400">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#" class="hover:text-yellow-400">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="#" class="hover:text-yellow-400">
+<i class="fab fa-linkedin"></i>
+</a>
+
+</div>
+
+</div>
+
+<!-- Column 2 -->
+
+<div>
+
+<h3 class="font-semibold mb-5 text-lg">
+Quick Links
+</h3>
+
+<ul class="space-y-3 text-red-200">
+
+<li><a th:href="@{/}" class="hover:text-white">Home</a></li>
+<li><a th:href="@{/about}" class="hover:text-white">About Us</a></li>
+<li><a th:href="@{/admission}" class="hover:text-white">Admissions</a></li>
+<li><a th:href="@{/gallery}" class="hover:text-white">Gallery</a></li>
+
+</ul>
+
+</div>
+
+<!-- Column 3 -->
+
+<div>
+
+<h3 class="font-semibold mb-5 text-lg">
+Programs
+</h3>
+
+<ul class="space-y-3 text-red-200">
+
+<li><a href="#" class="hover:text-white">Play Group</a></li>
+<li><a href="#" class="hover:text-white">Nursery</a></li>
+<li><a href="#" class="hover:text-white">Junior KG</a></li>
+<li><a href="#" class="hover:text-white">Senior KG</a></li>
+
+</ul>
+
+</div>
+
+<!-- Column 4 -->
+
+<div>
+
+<h3 class="font-semibold mb-5 text-lg">
+Contact Us
+</h3>
+
+<ul class="space-y-3 text-red-200">
+
+<li>📍 Lucknow, Uttar Pradesh</li>
+<li>📞 +91 9876543210</li>
+<li>📧 info@oratricskids.com</li>
+
+</ul>
+
+<a th:href="@{/register}"
+class="inline-block mt-6 bg-yellow-400 text-black px-5 py-2 rounded font-semibold hover:bg-yellow-300">
+Register Now
+</a>
+
+</div>
+
+</div>
+
+<div class="border-t border-red-400 mt-12 pt-6 text-center text-red-200 text-sm">
+
+© 2026 Oratrics Kids Preschool. All Rights Reserved.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MOBILE MENU SCRIPT ================= -->
+
+<script>
+
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("mobile-menu");
+
+btn.addEventListener("click", () => {
+
+menu.classList.toggle("hidden");
+
+if(menu.classList.contains("hidden")){
+btn.innerHTML = "☰";
+}else{
+btn.innerHTML = "✕";
+}
+
+});
+
+</script>
+
+</body>
+</html>
